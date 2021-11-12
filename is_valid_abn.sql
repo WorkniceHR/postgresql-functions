@@ -16,8 +16,8 @@ AS $$
     string_to_array(
       cast((cast((
         case
-          when $1 ~ '^(\\s*\\d\\s*){11}$'
-            then regexp_replace($1, '\\s', '', 'g')
+          when $1 ~ '^(\s*\d\s*){11}$'
+            then regexp_replace($1, '\s', '', 'g')
           else '11111111111'
         end
       ) as bigint) - 10000000000) as text),
