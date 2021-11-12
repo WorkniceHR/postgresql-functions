@@ -1,1 +1,1 @@
-# postgresql-functions
+# PostgreSQL Functions
