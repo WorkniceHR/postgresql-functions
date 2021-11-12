@@ -1,8 +1,8 @@
 /*
 
-Removes leading or trailing whitespace (no just spaces) from the given text.
+Removes leading or trailing whitespace from the given text.
 
-This is different from the built-in trim() and btrim() functions as they only remove a set aof specified characters.
+This is different from the built-in trim() or btrim() functions as they only remove a specific set of characters instead of any whitespace.
 
 */
 
