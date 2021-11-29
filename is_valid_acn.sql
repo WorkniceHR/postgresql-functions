@@ -23,7 +23,7 @@ as $$
         total := total + cast(digits[i] as int) * (9 - i);
       end loop;
       RAISE NOTICE 'total: %', total;
-      return total % 10 = 10 - cast(digits[9] as int);
+      return (10 - (total % 10)) % 10 = cast(digits[9] as int);
     else
       return false;
     end if;
