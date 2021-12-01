@@ -15,14 +15,11 @@ as $$
     total int := 0;
     i int := 0;
   begin
-    RAISE NOTICE 'start: %', regexp_replace($1, '\s', '', 'g');
     if $1 ~ '^(\s*\d\s*){9}$' then
-      RAISE NOTICE 'legit';
       digits := string_to_array(regexp_replace($1, '\s', '', 'g'), null);
       for i in 1..8 loop
         total := total + cast(digits[i] as int) * (9 - i);
       end loop;
-      RAISE NOTICE 'total: %', total;
       return (10 - (total % 10)) % 10 = cast(digits[9] as int);
     else
       return false;
